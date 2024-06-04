@@ -20,6 +20,12 @@ public class Book {
         this.yearOfPublish = yearOfPublish;
     }
 
+    public Book(String title, String subtitle, Author author) {
+        this.title = title;
+        this.subtitle = subtitle;
+        this.author = author;
+    }
+
     public Book(String title, int yearOfPublish) {
         this.title = title;
         this.yearOfPublish = yearOfPublish;
@@ -65,12 +71,12 @@ public class Book {
     public String toString() {
         StringBuilder resultString = new StringBuilder();
         resultString.append(this.title);
-        if (!this.subtitle.isEmpty()) {
+        if (this.subtitle != null) {
             resultString.append(": ").append(this.subtitle);
         }
-        if (!this.author.getFirstName().isEmpty()) {
+        if (this.author.getFirstName() != null) {
             resultString.append(", ").append(this.author.getFirstName());
-            if (!this.author.getLastName().isEmpty()) {
+            if (this.author.getLastName() != null) {
                 resultString.append(" ").append(this.author.getLastName());
             }
         }
