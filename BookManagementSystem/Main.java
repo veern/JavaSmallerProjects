@@ -2,7 +2,19 @@ package BookManagementSystem;
 
 public class Main {
     public static void main(String[] args) {
+        Library myLibrary = new Library();
         Book book1 = new Book("Wiedzmin", "Wild Hunt", new Author("Andrzej", "Sapkowski"));
-        System.out.println(book1);
+        Book book2 = new Book("Wiedzminy", "Wild Hunt", new Author("Andrzej", "Sapkowski"));
+
+        myLibrary.addBookToShelf(book1);
+        myLibrary.addBookToShelf(book1);
+        myLibrary.addBookToShelf(book2);
+        System.out.println(myLibrary.findBookByParameter("Wiedzmin"));
+        myLibrary.printOutAllBooks();
+        // myLibrary.removeBookFromShelf(book1);
+        // myLibrary.printOutAllBooks();
+        // System.out.println(myLibrary.getAmountOfBooks());
+
+
     }
 }
