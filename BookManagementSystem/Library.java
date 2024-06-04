@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Random;
 import java.util.Map.Entry;
+
+import BookManagementSystem.Interfaces.BookSearchCriteria;
+
 import java.util.ArrayList;
 
 public class Library {
@@ -62,17 +65,13 @@ public class Library {
         return this.amountOfBooks;
     }
 
-    public ArrayList<Book> findBookByParameter(String title) {
+    public ArrayList<Book> findBookByParameter(BookSearchCriteria bookSearch) {
         ArrayList<Book> findings = new ArrayList<>();
         for (Entry<Integer, Book> entry : this.bookShelf.entrySet()) {
-            if (entry.getValue().getTitle().equals(title)) {
+            if (bookSearch.search(entry.getValue())) {
                 findings.add(entry.getValue());
             }
         }
         return findings;
     }
-    
-    // getBookByParameters;
-    // saveToFile;
-    // readFromFile;
 }
