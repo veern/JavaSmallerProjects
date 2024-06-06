@@ -19,6 +19,7 @@ public class Main {
 
         System.out.println(myLibrary.findBookByParameter(authorSearch));
         myLibrary.printOutAllBooks();
-        myLibrary.writeToFile();
+        // myLibrary.writeAllToFile();
+        myLibrary.writeSelectedBooksToFile(titleSearch);
     }
 }
