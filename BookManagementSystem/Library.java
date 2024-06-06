@@ -7,6 +7,8 @@ import java.util.Map.Entry;
 
 import BookManagementSystem.Interfaces.BookSearchCriteria;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Library {
@@ -73,5 +75,17 @@ public class Library {
             }
         }
         return findings;
+    }
+
+    public void writeToFile() {
+        try {
+            FileWriter writer = new FileWriter("Data.txt");
+            for (Entry<Integer, Book> entry : this.bookShelf.entrySet()) {
+                writer.append(entry.getValue().toString() + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
