@@ -1,5 +1,7 @@
 package BookManagementSystem;
 
+import java.util.Objects;
+
 public class Book {
     
     private String title;
@@ -84,5 +86,35 @@ public class Book {
             resultString.append(", ").append(this.yearOfPublish);
         }
         return resultString.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((this.getTitle() != null) ? this.getTitle().hashCode() : 0);
+        result = prime * result + ((this.getSubtitle() != null) ? this.getSubtitle().hashCode() : 0);
+        result = prime * result
+                + ((this.getAuthor().getFirstName() != null) ? this.getAuthor().getFirstName().hashCode() : 0);
+        result = prime * result
+                + ((this.getAuthor().getLastName() != null) ? this.getAuthor().getLastName().hashCode() : 0);
+        result = prime * result + ((this.getYearOfPublish() != -1) ? this.getYearOfPublish() : 0);
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (this == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Book otherBook = (Book) obj;
+        return Objects.equals(this.getAuthor(), otherBook.getAuthor()) &&
+            Objects.equals(this.getTitle(), otherBook.getTitle()) &&
+            Objects.equals(this.getSubtitle(), otherBook.getSubtitle()) &&
+            Objects.equals(this.getYearOfPublish(), otherBook.getYearOfPublish());
+         
     }
 }
