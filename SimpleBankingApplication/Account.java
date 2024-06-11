@@ -1,5 +1,7 @@
 package SimpleBankingApplication;
 
+import SimpleBankingApplication.Exceptions.WrongMoneyFormat;
+
 public class Account {
     
     private Currency currency;
@@ -9,13 +11,23 @@ public class Account {
     public Account(AccountType accType, Currency currency, double money) {
         this.accountType = accType;
         this.currency = currency;
-        this.amtOfMoney = money;
+        if (checkIfMoneyHasMaximumTwoDecimals(money)) {
+            this.amtOfMoney = money;
+        }
+        else {
+            throw new WrongMoneyFormat(money);
+        }
     }
 
     public Account(AccountType accType) {
         this.accountType = accType;
         this.currency = null;
         this.amtOfMoney = 0.0f;
+    }
+
+    public boolean checkIfMoneyHasMaximumTwoDecimals(double number) {
+        double multipliedNumber = number * 100.0;
+        return (multipliedNumber - (int) multipliedNumber) == 0;
     }
 
     public AccountType getAccountType() {
