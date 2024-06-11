@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Random;
 import java.util.Map.Entry;
+import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 import BookManagementSystem.Interfaces.BookSearchCriteria;
-
-import java.util.ArrayList;
 
 public class Library {
     
@@ -73,5 +75,30 @@ public class Library {
             }
         }
         return findings;
+    }
+
+    public void writeAllToFile() {
+        try {
+            FileWriter writer = new FileWriter("Data.txt");
+            for (Entry<Integer, Book> entry : this.bookShelf.entrySet()) {
+                writer.append(entry.getValue().toString() + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeSelectedBooksToFile(BookSearchCriteria bookSearch) {
+        try {
+            FileWriter writer = new FileWriter("Data.txt");
+            ArrayList<Book> foundBooks = findBookByParameter(bookSearch);
+            for (Book book : foundBooks) {
+                writer.append(book.toString() + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

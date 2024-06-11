@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) {
         Library myLibrary = new Library();
         Book book1 = new Book("Wiedzmin", "Wild Hunt", new Author("Andrzej", "Sapkowski"));
-        Book book2 = new Book("Wiedzminy", "Wild Hunt", new Author("Andrzej", "Lapkowski"));
+        Book book2 = new Book("Wiedzmin", "Wild Hunt", new Author("Andrzej", "Sapkowski"));
+        System.out.println(book1.equals(book2));
         myLibrary.addBookToShelf(book1);
         myLibrary.addBookToShelf(book1);
         myLibrary.addBookToShelf(book2);
@@ -19,5 +20,7 @@ public class Main {
 
         System.out.println(myLibrary.findBookByParameter(authorSearch));
         myLibrary.printOutAllBooks();
+        // myLibrary.writeAllToFile();
+        myLibrary.writeSelectedBooksToFile(titleSearch);
     }
 }
