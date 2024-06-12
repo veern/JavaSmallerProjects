@@ -1,7 +1,6 @@
-package BookManagementSystem.SearchCriterias;
+package com.book.interfaces;
 
-import BookManagementSystem.Book;
-import BookManagementSystem.Interfaces.BookSearchCriteria;
+import com.book.Book;
 
 public class YearOfPublishSearch implements BookSearchCriteria {
     private final int yearOfPublish;

@@ -1,8 +1,7 @@
-package BookManagementSystem.SearchCriterias;
+package com.book.interfaces;
 
-import BookManagementSystem.Author;
-import BookManagementSystem.Book;
-import BookManagementSystem.Interfaces.BookSearchCriteria;
+import com.book.Author;
+import com.book.Book;
 
 public class AuthorSearch implements BookSearchCriteria {
     private final Author author;

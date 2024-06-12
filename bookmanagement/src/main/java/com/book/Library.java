@@ -1,4 +1,4 @@
-package BookManagementSystem;
+package com.book;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-import BookManagementSystem.Interfaces.BookSearchCriteria;
+import com.book.interfaces.BookSearchCriteria;
 
 public class Library {
     

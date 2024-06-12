@@ -1,8 +1,7 @@
-package BookManagementSystem;
+package com.book;
 
-import BookManagementSystem.SearchCriterias.AuthorSearch;
-import BookManagementSystem.SearchCriterias.TitleSearch;
-import BookManagementSystem.SearchCriterias.YearOfPublishSearch;
+import com.book.interfaces.AuthorSearch;
+import com.book.interfaces.TitleSearch;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +15,6 @@ public class Main {
 
         AuthorSearch authorSearch = new AuthorSearch(new Author("Andrzej", "Lapkowski"));
         TitleSearch titleSearch = new TitleSearch("Wiedzmin");
-        YearOfPublishSearch yearOfPublishSearch = new YearOfPublishSearch(1999);
 
         System.out.println(myLibrary.findBookByParameter(authorSearch));
         myLibrary.printOutAllBooks();

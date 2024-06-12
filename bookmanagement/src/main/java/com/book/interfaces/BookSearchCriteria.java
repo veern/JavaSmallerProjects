@@ -1,6 +1,6 @@
-package BookManagementSystem.Interfaces;
+package com.book.interfaces;
 
-import BookManagementSystem.Book;
+import com.book.Book;
 
 public interface BookSearchCriteria {
     boolean search(Book book);

@@ -1,0 +1,8 @@
+com\book\interfaces\AuthorSearch.class
+com\book\Book.class
+com\book\Main.class
+com\book\interfaces\BookSearchCriteria.class
+com\book\interfaces\YearOfPublishSearch.class
+com\book\interfaces\TitleSearch.class
+com\book\Library.class
+com\book\Author.class

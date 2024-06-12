@@ -1,4 +1,4 @@
-package BookManagementSystem;
+package com.book;
 
 import java.util.Objects;
 
