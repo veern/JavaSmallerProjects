@@ -10,6 +10,9 @@ import java.io.IOException;
 
 import com.book.interfaces.BookSearchCriteria;
 
+import lombok.Getter;
+
+@Getter
 public class Library {
     
     private static final int MIN_ID = 100_000;
@@ -32,7 +35,7 @@ public class Library {
         return id;
     }
     
-    private int getIdFromBook(Book book) {
+    public int getIdFromBook(Book book) {
         for (Entry<Integer, Book> entry : this.bookShelf.entrySet()) {
             if (Objects.equals(entry.getValue(), book)) {
                 return entry.getKey();
@@ -60,10 +63,6 @@ public class Library {
 
     public HashMap<Integer, Book> getAllBooks() {
         return this.bookShelf;
-    }
-
-    public int getAmountOfBooks() {
-        return this.amountOfBooks;
     }
 
     public ArrayList<Book> findBookByParameter(BookSearchCriteria bookSearch) {
